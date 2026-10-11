@@ -1,6 +1,6 @@
 # Niladri Dey — Developer Portfolio
 
-A personal portfolio website for Niladri Dey, built to showcase development work, technical strengths, and project thinking in a polished, responsive front-end experience.
+A personal portfolio website of me, built to showcase development work, technical strengths, and project thinking in a polished, responsive front-end experience.
 
 Live demo: https://techieniladri.github.io/niladridey_portfolio/
 
@@ -19,10 +19,10 @@ The site is intentionally lightweight and dependency-free, using HTML, CSS, and 
 
 The site serves as a digital resume and portfolio, helping visitors quickly understand:
 
-- who Niladri is
-- what kind of work he builds
-- which technologies he has used
-- what kinds of products and experiments he is exploring
+- who am I
+- what kind of work I build
+- which technologies I have used
+- what kinds of products and experiments I am exploring
 
 It is especially useful for:
 
@@ -133,11 +133,6 @@ The site is designed to balance professionalism with personality. It avoids heav
 
 This makes the project easy to host, easy to understand, and easy to maintain.
 
-## License
-
-This repository does not currently declare an explicit license. In practical terms, that means copyright remains with the author unless a license is added.
-
-If you want to allow others to reuse or adapt the code, you can add a license such as MIT. For a personal portfolio, many developers either:
 
 - leave the project unlicensed, or
 - add MIT if they want the code to be reusable by others.
@@ -150,7 +145,7 @@ If you want to allow others to reuse or adapt the code, you can add a license su
 
 ## About the Author
 
-Niladri Dey is a developer based in Kolkata, India, exploring frontend, backend, and product-oriented development work. The portfolio reflects a practical engineering mindset: clear interfaces, meaningful functionality, and learning through real projects.
+I am a developer based in Kolkata, India, exploring frontend, backend, and product-oriented development work. The portfolio reflects my practical engineering mindset: clear interfaces, meaningful functionality, and learning through real projects.
 
 ---
 
