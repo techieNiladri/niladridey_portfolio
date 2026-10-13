@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Niladri Dey — Developer Portfolio</title>
-<meta name="description" content="Niladri Dey is a developer in Kolkata building practical web applications across frontend, backend, and data.">
+<meta name="description" content="I’m a developer in Kolkata building practical web applications across frontend, backend, and data.">
 
 <!-- Fonts: Space Grotesk (display) + DM Sans (UI) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -424,7 +424,7 @@ ul { list-style: none; }
 .cursor.hover { width: 56px; height: 56px; border-color: transparent; background: var(--accent); }
 @media (pointer: coarse) { .cursor { display: none; } }
 
-/* Original split-identity art direction: UI on one side, data flow on the other. */
+/* Warm, restrained portfolio art direction. */
 :root { --bg:#faf9f6; --bg-elev:#f1f0eb; --fg:#20231f; --fg-muted:#666c65; --accent:#55785b; --accent-dim:#e6eee3; --card:#fff; --border:#e1e2dc; --border-bright:#c6cec4; --r-sm:3px; --r-md:5px; --r-lg:8px; --r-xl:12px; --fs-display:clamp(2.7rem,6vw,5rem); --fs-h1:clamp(2.1rem,4vw,3.2rem); }
 body { background:var(--bg); color:var(--fg); }
 .mesh-bg { background:var(--bg); animation:none; }
@@ -449,6 +449,8 @@ body { background:var(--bg); color:var(--fg); }
 .btn-ghost:hover { background:#eeeee9; border-color:var(--fg); }
 .mobile-menu-btn span { background:var(--fg); }
 .mobile-drawer { background:var(--bg); border-left-color:var(--border); }
+.mobile-menu-btn { width:44px; height:44px; padding:.65rem; }
+.mobile-drawer .nav-link { min-height:44px; display:flex; align-items:center; }
 .drawer-overlay { background:#20231f38; }
 .hero { min-height:min(880px,100vh); padding-top:88px; padding-bottom:3rem; }
 .hero-content { max-width:900px; gap:clamp(2rem,5vw,5rem); }
@@ -465,15 +467,19 @@ body { background:var(--bg); color:var(--fg); }
 .card:hover { border-color:var(--border-bright); transform:translateY(-2px); box-shadow:0 12px 26px #20231f0d; }
 .service-icon { border-radius:4px; background:#eef1eb; color:var(--accent); }
 .service-card p,.process-step p { color:var(--fg-muted); }
-.work-wrapper { margin:0; padding:0; overflow:visible; }
-.work-track { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; padding:0; overflow:visible; }
-.work-card { min-width:0; display:flex; flex-direction:column; padding:.65rem; }
-.work-media { aspect-ratio:16/9; border-radius:2px; background:#eeeee9; overflow:hidden; }
+.work-wrapper { margin:0; padding:.15rem; overflow:visible; }
+.work-track { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:stretch; gap:clamp(1rem,2.4vw,2rem); padding:0; overflow:visible; }
+.work-card { min-width:0; height:100%; display:flex; flex-direction:column; padding:0; overflow:hidden; border-radius:8px; }
+.work-media { aspect-ratio:2 / 1; border-radius:0; background:#eeeee9; overflow:hidden; }
+.work-media img { filter:none; transition:transform var(--dur-slow) var(--ease-out); }
+.work-card:hover .work-media img { transform:scale(1.025); filter:none; }
 .work-media .project-screenshot { display:block; width:100%; height:100%; object-fit:contain; background:#101722; }
 .work-overlay { display:none; }
-.work-content { padding:.8rem .35rem .3rem; }
-.work-content h3 { font-size:1.1rem; letter-spacing:-.035em; }
-.work-content p { color:var(--fg-muted); line-height:1.55; }
+.work-content { display:flex; flex:1; flex-direction:column; align-items:flex-start; padding:1.15rem 1.25rem 1.25rem; }
+.work-content h3 { font-size:clamp(1.15rem,1.5vw,1.35rem); letter-spacing:-.035em; }
+.work-content p { color:var(--fg-muted); line-height:1.65; margin-top:.55rem; }
+.work-links { display:flex; flex-wrap:wrap; gap:.2rem 1.25rem; margin-top:auto; padding-top:1rem; }
+.work-links .service-link { min-height:44px; margin-top:0; padding:.5rem .1rem; }
 .project-preview { border-radius:2px; }
 .preview-window { border-radius:3px; box-shadow:0 9px 22px #0002; }
 .preview-row,.preview-pill { border-radius:2px; }
@@ -504,12 +510,14 @@ body { background:var(--bg); color:var(--fg); }
   .hero p { line-height:1.7; }
   .hero-actions { margin-top:.2rem; }
   .hero-stats { margin-top:.75rem; padding-top:1.6rem; }
-  .work-content { padding:1.1rem .55rem .45rem; }
-  .work-content h3 { margin-bottom:.7rem; }
+  .work-content { padding:1.2rem 1.35rem 1.3rem; }
+  .work-content h3 { margin-bottom:0; }
   .work-content p { max-width:62ch; }
 }
 @media (max-width:900px) {
-  .work-track { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .work-track { gap:1.1rem; }
+  .work-content { padding:1rem 1rem 1.1rem; }
+  .work-links { column-gap:.9rem; }
   .hero { min-height:auto; padding-top:clamp(7.5rem,14vh,9rem); padding-bottom:4rem; }
   .hero-content { grid-template-columns:1fr; gap:1.5rem; }
   .hero-content > div:first-child { display:grid; justify-items:start; gap:1.35rem; }
@@ -519,7 +527,28 @@ body { background:var(--bg); color:var(--fg); }
   .hero-actions { margin-top:.15rem; }
   .hero-stats { margin-top:.65rem; padding-top:1.4rem; }
 }
-@media (max-width:640px) { .hero { padding-top:clamp(7rem,14vh,8rem); padding-bottom:3.5rem; } .hero-content { grid-template-columns:1fr; } .hero-content > div:first-child { gap:1.2rem; } .hero h1 { font-size:clamp(2.55rem,9.5vw,3.25rem); line-height:1.07; } .hero-stats { width:100%; justify-content:space-between; gap:.9rem; padding-top:1.25rem; } .stat { min-width:0; } .stat-value { font-size:1.65rem; } .stat-label { font-size:.68rem; } .work-track { grid-template-columns:1fr; gap:1rem; } .work-card { padding:.55rem; } .work-media { aspect-ratio:16/9; } .work-content { padding:.7rem .25rem .25rem; } .work-content p { font-size:.86rem; line-height:1.5; } .work-content .service-link { width:fit-content; } .testimonial-card { flex-basis:min(84vw,400px); } .footer-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width:640px) {
+  .hero { padding-top:clamp(7rem,14vh,8rem); padding-bottom:3.5rem; }
+  .hero-content { grid-template-columns:1fr; }
+  .hero-content > div:first-child { gap:1.2rem; }
+  .hero h1 { font-size:clamp(2.55rem,9.5vw,3.25rem); line-height:1.07; }
+  .hero-stats { width:100%; justify-content:space-between; gap:.9rem; padding-top:1.25rem; }
+  .stat { min-width:0; }
+  .stat-value { font-size:1.65rem; }
+  .stat-label { font-size:.68rem; }
+  .work-track { grid-template-columns:1fr; gap:1rem; }
+  .work-card { border-radius:7px; }
+  .work-media { aspect-ratio:1.85 / 1; }
+  .work-content { padding:.95rem 1rem 1rem; }
+  .work-content p { font-size:.9rem; line-height:1.6; }
+  .work-links { gap:.2rem 1rem; padding-top:.8rem; }
+  .work-content .service-link { width:fit-content; }
+  .testimonial-card { flex-basis:min(84vw,400px); }
+  .footer-grid { grid-template-columns:1fr 1fr; }
+  .cta { padding:2rem 1rem; }
+  .cta-actions { display:grid; grid-template-columns:1fr; }
+  .cta-actions .btn { width:100%; justify-content:center; }
+}
 /* Touch devices get tap/focus feedback, never sticky hover-only decoration. */
 @media (hover:none) {
   .btn:hover:not(:active) { transform:none; box-shadow:none; }
@@ -529,7 +558,7 @@ body { background:var(--bg); color:var(--fg); }
   .service-card:hover .service-icon { transform:none; background:#eef1eb; color:var(--accent); }
   .service-card:hover .service-link { opacity:1; transform:none; }
   .service-card:hover .service-link svg { transform:none; }
-  .work-card:hover .work-media img { transform:none; filter:grayscale(.3) contrast(1.1); }
+  .work-card:hover .work-media img { transform:none; filter:none; }
   .work-card:hover .work-overlay { opacity:0; }
   .nav-link:hover { color:var(--fg-muted); background:transparent; }
   .footer-col a:hover { color:var(--fg-muted); }
@@ -557,14 +586,14 @@ body { background:var(--bg); color:var(--fg); }
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
 
-    <button class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle menu">
+    <button class="mobile-menu-btn" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 
   <!-- Mobile Drawer -->
   <div class="drawer-overlay" aria-hidden="true"></div>
-  <aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Menu">
+  <aside class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Menu" aria-modal="true" aria-hidden="true" inert>
     <nav class="nav">
       <a href="#work" class="nav-link">Projects</a>
       <a href="#services" class="nav-link">Skills</a>
@@ -579,7 +608,7 @@ body { background:var(--bg); color:var(--fg); }
   <section class="hero section" aria-labelledby="hero-title">
     <div class="container hero-content">
       <div class="hero-intro">
-        <div class="hero-badge reveal">Niladri Dey · Kolkata, India · Open to remote</div>
+        <div class="hero-badge reveal">I’m Niladri Dey · based in Kolkata · open to remote roles</div>
         <h1 id="hero-title" class="reveal" style="--delay:1">I shape the <em>interface</em>.<br>Then build what powers it.</h1>
       </div>
       <div class="hero-support">
@@ -609,32 +638,32 @@ body { background:var(--bg); color:var(--fg); }
         <article class="card service-card reveal" style="--delay:1">
           <div class="service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18"/></svg></div>
           <h3>React</h3>
-          <p>Component-based interfaces for responsive, interactive web applications.</p>
+          <p>I’ve used React to build component-based, responsive interfaces with interactive flows.</p>
         </article>
         <article class="card service-card reveal" style="--delay:2">
           <div class="service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
           <h3>TypeScript</h3>
-          <p>Typed application development that makes code easier to reason about and maintain.</p>
+          <p>I’ve used TypeScript to structure application code and make its intent easier to follow.</p>
         </article>
         <article class="card service-card reveal" style="--delay:3">
           <div class="service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H7"/></svg></div>
           <h3>JavaScript</h3>
-          <p>Modern browser features, event-driven interactions, and practical client-side logic.</p>
+          <p>I use JavaScript for browser interactions, event-driven behavior, and client-side logic.</p>
         </article>
         <article class="card service-card reveal" style="--delay:4">
           <div class="service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
           <h3>Node &amp; Express</h3>
-          <p>Lightweight server-side APIs and application logic for full-stack projects.</p>
+          <p>I’ve used Node and Express to build API routes and connect application flows to data.</p>
         </article>
         <article class="card service-card reveal" style="--delay:5">
           <div class="service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
           <h3>PostgreSQL</h3>
-          <p>Relational data modelling and persistence for applications that need reliable records.</p>
+          <p>I’ve worked with PostgreSQL schemas and persistence for structured application data.</p>
         </article>
         <article class="card service-card reveal" style="--delay:6">
           <div class="service-icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
           <h3>Git &amp; GitHub</h3>
-          <p>Version-controlled development and public project documentation.</p>
+          <p>I use Git and GitHub to track changes and share my projects and their progress.</p>
         </article>
       </div>
     </div>
@@ -644,47 +673,52 @@ body { background:var(--bg); color:var(--fg); }
   <section id="work" class="section" aria-labelledby="work-title">
     <div class="container">
       <header class="section-header reveal">
-        <span class="section-label">Work in progress &amp; shipped</span>
+        <span class="section-label">What I’m building and learning from</span>
         <h2 id="work-title" class="section-title">Projects</h2>
-        <p class="section-desc">Focused experiments in product thinking, interface design, and end-to-end application flow.</p>
+        <p class="section-desc">I use these projects to practice product thinking, interface design, and end-to-end application flow.</p>
       </header>
       <div class="work-wrapper reveal">
         <div class="work-track" role="list" aria-label="Case studies">
-          <!-- Productivity Garden: active development, no public demo yet. -->
+          <!-- Productivity Garden: concept preview until a public screenshot is available. -->
           <article class="work-card card" role="listitem">
-            <div class="work-media"><div class="project-preview garden-preview" aria-label="Illustrated concept preview of a seed growing through task stages"><div class="preview-window"><div class="preview-heading"><span>Today’s garden</span><span class="preview-pill">20:00</span></div><div class="preview-row"><span>🌱 Focus session</span><span class="preview-muted">Stage 2 of 5</span></div><div class="preview-row"><span class="preview-muted">Growth progress</span><span class="preview-pill">Growing</span></div></div></div></div>
+            <div class="work-media"><div class="project-preview garden-preview" role="img" aria-label="Illustrated concept preview of a seed growing through task stages"><div class="preview-window"><div class="preview-heading"><span>Today’s garden</span><span class="preview-pill">20:00</span></div><div class="preview-row"><span>🌱 Focus session</span><span class="preview-muted">Stage 2 of 5</span></div><div class="preview-row"><span class="preview-muted">Growth progress</span><span class="preview-pill">Growing</span></div></div></div></div>
             <div class="work-content">
               <h3>Productivity Garden</h3>
-              <p>A task-to-plant system: complete a task, grow it through a 20-minute cycle, then harvest and collect it. Auth, row-level security, database constraints, and a transactional planting RPC are in place; hardening and deployment are underway.</p>
-              <span class="service-link" style="opacity:1;transform:none;color:var(--fg-muted)">Private development · no public demo yet</span>
+              <p>I’m building Productivity Garden around a 20-minute task-to-plant cycle, with authentication, row-level security, database constraints, and a transactional planting RPC. I’m hardening edge cases before deployment.</p>
             </div>
           </article>
           <article class="work-card card" role="listitem">
-            <div class="work-media"><img class="project-screenshot" src="assets/neural-decider-screenshot.png" alt="Neural-Decider landing screen"></div>
+            <div class="work-media"><img class="project-screenshot" src="assets/neural-decider-screenshot.png" alt="Neural-Decider landing screen" loading="lazy" decoding="async"></div>
             <div class="work-content">
               <h3>Neural-Decider</h3>
-              <p>An AI-assisted reflection experiment where users respond to choice-based scenarios and receive generated reflections. It explores an idea; its output is not a validated psychological assessment.</p>
-              <a href="https://decision-timer.vercel.app/" class="service-link" target="_blank" rel="noopener noreferrer">Live experiment <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="https://github.com/techieNiladri/Neural-Decider" class="service-link" target="_blank" rel="noopener noreferrer">View on GitHub <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <p>I built Neural-Decider as an AI-assisted reflection experiment using choice-based scenarios and generated responses. I present it as an exploration, not a validated psychological assessment.</p>
+              <div class="work-links">
+                <a href="https://decision-timer.vercel.app/" class="service-link" target="_blank" rel="noopener noreferrer">Live experiment <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="https://github.com/techieNiladri/Neural-Decider" class="service-link" target="_blank" rel="noopener noreferrer">View on GitHub <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              </div>
             </div>
           </article>
           <!-- Card 2 -->
           <article class="work-card card" role="listitem">
-            <div class="work-media"><div class="project-preview iron-preview" aria-label="Illustrated data-flow preview for the Iron-Forge workout tracker prototype"><div class="preview-window"><div class="preview-heading"><span>Workout log</span><span class="preview-pill">NOT DEPLOYED</span></div><div class="preview-row"><span>Exercise record</span><span class="preview-muted">POST</span></div><div class="preview-row"><span>Express API</span><span class="preview-muted">→ PostgreSQL</span></div><div class="preview-row"><span class="preview-muted">Weight + reps</span><span class="preview-pill">Stored record</span></div></div></div></div>
+            <div class="work-media"><div class="project-preview iron-preview" role="img" aria-label="Illustrated data-flow preview for the Iron-Forge workout tracker prototype"><div class="preview-window"><div class="preview-heading"><span>Workout log</span></div><div class="preview-row"><span>Exercise record</span><span class="preview-muted">POST</span></div><div class="preview-row"><span>Express API</span><span class="preview-muted">→ PostgreSQL</span></div><div class="preview-row"><span class="preview-muted">Weight + reps</span><span class="preview-pill">Stored record</span></div></div></div></div>
             <div class="work-content">
               <h3>Iron-Forge</h3>
-              <p>A workout-tracking project with a Node/Express backend and PostgreSQL foundation for recording exercises, weights, and reps. It is still a prototype; integration and deployment need finishing.</p>
-              <a href="https://github.com/techieNiladri/Iron-Forge" class="service-link" target="_blank" rel="noopener noreferrer">View on GitHub <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <p>I started Iron-Forge as a workout tracker with Node, Express, and PostgreSQL for recording exercises, weights, and reps. I’m still finishing the integration and deployment.</p>
+              <div class="work-links">
+                <a href="https://github.com/techieNiladri/Iron-Forge" class="service-link" target="_blank" rel="noopener noreferrer">View on GitHub <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              </div>
             </div>
           </article>
           <!-- Card 3 -->
           <article class="work-card card" role="listitem">
-            <div class="work-media"><img class="project-screenshot" src="assets/keeperapp-screenshot.png" alt="KeeperApp notes interface"></div>
+            <div class="work-media"><img class="project-screenshot" src="assets/keeperapp-screenshot.png" alt="KeeperApp notes interface" loading="lazy" decoding="async"></div>
             <div class="work-content">
               <h3>Keeper App</h3>
-              <p>A responsive React and Material UI notes app with add and delete flows. Notes currently live only in page state, so they do not persist after refresh.</p>
-              <a href="https://github.com/techieNiladri/KeeperApp" class="service-link" target="_blank" rel="noopener noreferrer">View on GitHub <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-              <a href="https://techieniladri.github.io/KeeperApp/" class="service-link" target="_blank" rel="noopener noreferrer">Live demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <p>I built Keeper App with React and Material UI so I can add and delete notes in a responsive interface. Notes currently stay in page state and don’t persist after refresh.</p>
+              <div class="work-links">
+                <a href="https://github.com/techieNiladri/KeeperApp" class="service-link" target="_blank" rel="noopener noreferrer">View on GitHub <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                <a href="https://techieniladri.github.io/KeeperApp/" class="service-link" target="_blank" rel="noopener noreferrer">Live demo <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              </div>
             </div>
           </article>
         </div>
@@ -703,19 +737,19 @@ body { background:var(--bg); color:var(--fg); }
       <ol class="process-grid reveal-group" style="counter-reset: step;">
         <li class="process-step card reveal" style="--delay:1">
           <h3>Understand</h3>
-          <p>Start with the user problem, constraints, and the outcome the product needs to deliver.</p>
+          <p>I start with the user problem, constraints, and the outcome the product needs to deliver.</p>
         </li>
         <li class="process-step card reveal" style="--delay:2">
           <h3>Plan</h3>
-          <p>Break the idea into a sensible scope, identify the key flows, and choose the right tools.</p>
+          <p>I break the idea into a sensible scope, identify the key flows, and choose tools to fit.</p>
         </li>
         <li class="process-step card reveal" style="--delay:3">
           <h3>Build</h3>
-          <p>Develop clear, responsive interfaces and connect them to the data and logic they need.</p>
+          <p>I build clear, responsive interfaces and connect them to the data and logic they need.</p>
         </li>
         <li class="process-step card reveal" style="--delay:4">
           <h3>Refine</h3>
-          <p>Test the core experience, improve the rough edges, and document what I learn for the next iteration.</p>
+          <p>I test the core experience, smooth the rough edges, and carry what I learn into the next iteration.</p>
         </li>
       </ol>
     </div>
@@ -732,28 +766,28 @@ body { background:var(--bg); color:var(--fg); }
         <div class="testimonial-marquee">
           <div class="testimonial-marquee-group">
         <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="1 of 4">
-          <blockquote>“A clear interface should help someone take the next step without making them think twice.”</blockquote>
+          <blockquote>“I aim to make each interface clear enough that someone can take the next step with confidence.”</blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">C</div>
             <div><div class="author-name">Clarity</div><div class="author-role">Purpose before decoration</div></div>
           </div>
         </article>
         <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="2 of 4">
-          <blockquote>“The best implementation is readable enough that the next person can improve it with confidence.”</blockquote>
+          <blockquote>“I try to write code that I—and the next person—can improve with confidence.”</blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">M</div>
             <div><div class="author-name">Maintainability</div><div class="author-role">Code that invites iteration</div></div>
           </div>
         </article>
         <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="3 of 4">
-          <blockquote>“A well-scoped project can teach more than an ambitious idea left unfinished.”</blockquote>
+          <blockquote>“I’d rather finish a well-scoped project and learn from it than leave an ambitious idea unfinished.”</blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">F</div>
             <div><div class="author-name">Focus</div><div class="author-role">Useful scope over feature volume</div></div>
           </div>
         </article>
         <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="4 of 4">
-          <blockquote>“Every project is a chance to make the next decision with more evidence and better judgement.”</blockquote>
+          <blockquote>“I treat each project as a chance to make my next decision with better evidence.”</blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">L</div>
             <div><div class="author-name">Learning</div><div class="author-role">Build, reflect, improve</div></div>
@@ -770,8 +804,8 @@ body { background:var(--bg); color:var(--fg); }
       <header class="section-header reveal">
         <span class="section-label">A little more about me</span>
         <h2 id="about-title" class="section-title">Careful work, beyond code</h2>
-        <p class="section-desc">Before focusing on software, I worked on court transcription at Percept Legal on a contract basis. The work involved adding accurate speaker labels, meeting daily client deadlines, and checking files for discrepancies—habits I bring to building and reviewing software.</p>
-        <p class="section-desc">Outside work: gym, martial arts, and guitar. Based in Kolkata; open to local and remote developer roles.</p>
+        <p class="section-desc">Before focusing on software, I worked on court transcription at Percept Legal under a contract. I added accurate speaker labels, met daily client deadlines, and checked files for discrepancies—habits I bring to building and reviewing software.</p>
+        <p class="section-desc">Outside work, I spend time at the gym, train martial arts, and play guitar. I’m based in Kolkata and open to local or remote developer roles.</p>
       </header>
     </div>
   </section>
@@ -801,7 +835,7 @@ body { background:var(--bg); color:var(--fg); }
           <span class="logo-mark" aria-hidden="true">N</span>
           <span>Niladri Dey</span>
         </a>
-        <p>Developer in Kolkata, India · open to remote opportunities.</p>
+        <p>I’m a developer based in Kolkata, India, and open to remote opportunities.</p>
       </div>
       <nav class="footer-col" aria-label="Company">
         <h4>Explore</h4>
@@ -815,14 +849,14 @@ body { background:var(--bg); color:var(--fg); }
         <a href="https://www.linkedin.com/in/niladri-dey-280710d/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:deyniladri937@gmail.com">Email</a>
       </nav>
-      <nav class="footer-col" aria-label="Legal">
+      <nav class="footer-col" aria-label="Current focus">
         <h4>Currently</h4>
-        <a href="#work">Productivity Garden in development</a>
-        <a href="#contact">Open to developer roles</a>
+        <a href="#work">What I’m building</a>
+        <a href="#contact">Roles I’m looking for</a>
       </nav>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Niladri Dey. Built with intent.</p>
+      <p>&copy; 2026 Niladri Dey. I build with intent.</p>
     </div>
   </div>
 </footer>
@@ -841,16 +875,40 @@ window.addEventListener('scroll', onScrollHeader, { passive: true });
 const menuBtn = document.querySelector('.mobile-menu-btn');
 const drawer = document.getElementById('mobile-drawer');
 const overlay = document.querySelector('.drawer-overlay');
+const drawerLinks = [...drawer.querySelectorAll('a')];
 const toggleDrawer = (open) => {
   menuBtn.setAttribute('aria-expanded', open);
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   drawer.classList.toggle('open', open);
+  drawer.setAttribute('aria-hidden', String(!open));
+  drawer.inert = !open;
   overlay.classList.toggle('visible', open);
   overlay.setAttribute('aria-hidden', !open);
   document.body.style.overflow = open ? 'hidden' : '';
+  if (open) drawerLinks[0]?.focus();
+  else menuBtn.focus();
 };
 menuBtn.addEventListener('click', () => toggleDrawer(!drawer.classList.contains('open')));
 overlay.addEventListener('click', () => toggleDrawer(false));
-drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
+drawerLinks.forEach(a => a.addEventListener('click', () => toggleDrawer(false)));
+document.addEventListener('keydown', (event) => {
+  if (!drawer.classList.contains('open')) return;
+  if (event.key === 'Escape') {
+    toggleDrawer(false);
+    return;
+  }
+  if (event.key === 'Tab') {
+    const firstLink = drawerLinks[0];
+    const lastLink = drawerLinks[drawerLinks.length - 1];
+    if (event.shiftKey && document.activeElement === firstLink) {
+      event.preventDefault();
+      lastLink.focus();
+    } else if (!event.shiftKey && document.activeElement === lastLink) {
+      event.preventDefault();
+      firstLink.focus();
+    }
+  }
+});
 
 // 3. Scroll Reveal (IntersectionObserver)
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
