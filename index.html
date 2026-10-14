@@ -368,14 +368,12 @@ ul { list-style: none; }
 .testimonials-track {
   overflow: hidden; margin: calc(-1 * var(--space-3)); padding: var(--space-2) var(--space-3);
 }
-.testimonial-marquee { display: flex; width: max-content; animation: testimonial-scroll 38s linear infinite; }
-.testimonial-marquee:hover, .testimonial-marquee:focus-within { animation-play-state: paused; }
+.testimonial-marquee { display: flex; width: max-content; animation: testimonial-scroll var(--carousel-duration, 36s) linear infinite; will-change: transform; }
 .testimonial-marquee-group { display: flex; gap: var(--space-3); padding-right: var(--space-3); }
 @keyframes testimonial-scroll { to { transform: translateX(-50%); } }
 .testimonial-card {
   flex: 0 0 clamp(280px, 80vw, 420px);
 }
-@media (prefers-reduced-motion: reduce) { .testimonials-track { overflow-x: auto; } .testimonial-marquee { animation: none; } }
 .testimonial-card blockquote { font-size: var(--fs-body); line-height: 1.7; color: var(--fg); margin-bottom: var(--space-3); position: relative; }
 .testimonial-card blockquote::before {
   content: "“"; font-family: var(--ff-display); font-size: 4rem; line-height: 1; color: var(--accent); opacity: 0.3;
@@ -491,15 +489,21 @@ body { background:var(--bg); color:var(--fg); }
 .process-step::before { background:#eaf0e7; border:0; color:var(--accent); }
 .process-step { padding:1.25rem; }
 .process-step::before,.process-step::after { display:none; }
-.testimonials-track { overflow:hidden; margin:0; padding:.25rem .1rem 1.1rem; scroll-snap-type:x mandatory; scroll-behavior:smooth; touch-action:pan-y; }
+.testimonials-track { overflow:hidden; margin:0; padding:.25rem .1rem 1.1rem; }
 .testimonials-track::-webkit-scrollbar { display:none; }
-.testimonial-marquee { width:max-content; animation:none; }
+.testimonial-marquee { width:max-content; animation: testimonial-scroll var(--carousel-duration, 36s) linear infinite; }
 .testimonial-marquee-group { width:max-content; display:flex; flex:0 0 auto; gap:1rem; padding:0 1rem 0 0; }
-.testimonial-card { flex:0 0 clamp(280px,42vw,440px); min-height:240px; padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between; scroll-snap-align:start; }
+.testimonial-card { flex:0 0 clamp(280px,42vw,440px); min-height:240px; padding:1.5rem; display:flex; flex-direction:column; justify-content:space-between; }
 .testimonial-card blockquote { color:var(--fg); font-size:1.02rem; line-height:1.65; padding-left:.4rem; }
 .testimonial-card blockquote::before { color:var(--accent); }
 .author-avatar { background:#e7eee3; color:var(--accent); }
-@media (prefers-reduced-motion:reduce) { .testimonials-track { scroll-behavior:auto; } }
+@media (prefers-reduced-motion:reduce) {
+  .testimonials-track { overflow:visible; }
+  .testimonial-marquee { width:100%; animation:none; transform:none; }
+  .testimonial-marquee-group { display:grid; width:100%; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:1rem; padding:0; }
+  .testimonial-marquee-group[aria-hidden="true"] { display:none; }
+  .testimonial-card { width:100%; min-width:0; min-height:0; }
+}
 .cta { margin:0; padding:clamp(2rem,5vw,4rem); background:#f1f0eb; border-color:var(--border); }
 .footer { border-top-color:var(--border); }
 .footer-brand p,.footer-col a,.footer-bottom p { color:var(--fg-muted); }
@@ -566,7 +570,6 @@ body { background:var(--bg); color:var(--fg); }
   .nav-link:hover { color:var(--fg-muted); background:transparent; }
   .footer-col a:hover { color:var(--fg-muted); }
   .socials a:hover { border-color:var(--border); color:var(--fg-muted); background:transparent; }
-  .testimonial-marquee:hover { animation-play-state:running; }
 }
 </style>
 </head>
@@ -769,32 +772,60 @@ body { background:var(--bg); color:var(--fg); }
       <div class="testimonials-track reveal" id="principles-carousel" role="region" aria-roledescription="carousel" aria-label="Development principles">
         <div class="testimonial-marquee">
           <div class="testimonial-marquee-group">
-        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="1 of 4">
+        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="1 of 8">
           <blockquote>“I aim to make each interface clear enough that someone can take the next step with confidence.”</blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">C</div>
             <div><div class="author-name">Clarity</div><div class="author-role">Purpose before decoration</div></div>
           </div>
         </article>
-        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="2 of 4">
+        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="2 of 8">
           <blockquote>“I try to write code that I—and the next person—can improve with confidence.”</blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">M</div>
             <div><div class="author-name">Maintainability</div><div class="author-role">Code that invites iteration</div></div>
           </div>
         </article>
-        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="3 of 4">
+        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="3 of 8">
           <blockquote>“I’d rather finish a well-scoped project and learn from it than leave an ambitious idea unfinished.”</blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">F</div>
             <div><div class="author-name">Focus</div><div class="author-role">Useful scope over feature volume</div></div>
           </div>
         </article>
-        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="4 of 4">
+        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="4 of 8">
           <blockquote>“I treat each project as a chance to make my next decision with better evidence.”</blockquote>
           <div class="testimonial-author">
             <div class="author-avatar">L</div>
             <div><div class="author-name">Learning</div><div class="author-role">Build, reflect, improve</div></div>
+          </div>
+        </article>
+        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="5 of 8">
+          <blockquote>“I trace a feature from input through logic to saved data, then check the edge cases that could break the flow.”</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div><div class="author-name">Reliability</div><div class="author-role">End-to-end behavior</div></div>
+          </div>
+        </article>
+        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="6 of 8">
+          <blockquote>“I think about who can take each action and reach each record before I consider a feature ready.”</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div><div class="author-name">Security</div><div class="author-role">Access as part of design</div></div>
+          </div>
+        </article>
+        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="7 of 8">
+          <blockquote>“I consider keyboard and touch use alongside pointer input, so the interface works across devices.”</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div><div class="author-name">Accessibility</div><div class="author-role">More ways to use the interface</div></div>
+          </div>
+        </article>
+        <article class="testimonial-card card" role="group" aria-roledescription="slide" aria-label="8 of 8">
+          <blockquote>“I choose the smallest solution that meets the real need, and add complexity only when it earns its place.”</blockquote>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div><div class="author-name">Simplicity</div><div class="author-role">Complexity with purpose</div></div>
           </div>
         </article>
           </div>
@@ -992,60 +1023,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// 7. Continuous, accessible carousel for the engineering principles
+// 7. Continuous loop for the engineering principles
 const principlesCarousel = document.getElementById('principles-carousel');
 if (principlesCarousel) {
   const carouselTrack = principlesCarousel.querySelector('.testimonial-marquee');
   const originalSet = carouselTrack.querySelector('.testimonial-marquee-group');
   const principleCards = [...originalSet.querySelectorAll('.testimonial-card')];
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const makeClone = () => {
-    const clone = originalSet.cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    clone.inert = true;
-    return clone;
-  };
-  const beforeSet = makeClone();
-  const afterSet = makeClone();
-  carouselTrack.prepend(beforeSet);
-  carouselTrack.append(afterSet);
-  let setWidth = originalSet.getBoundingClientRect().width;
-  const stepWidth = () => principleCards[0].getBoundingClientRect().width + (parseFloat(getComputedStyle(originalSet).gap) || 16);
-  principlesCarousel.scrollLeft = setWidth;
-  let currentPrinciple = 0;
-  let settleTimer;
-  let autoplayTimer;
-  const mod = (value, length) => ((value % length) + length) % length;
-  const goTo = (index) => {
-    if (!principleCards.length) return;
-    currentPrinciple = mod(index, principleCards.length);
-    principlesCarousel.scrollTo({ left: setWidth + index * stepWidth(), behavior: reducedMotion ? 'auto' : 'smooth' });
-  };
-  let carouselFrame;
-  principlesCarousel.addEventListener('scroll', () => {
-    cancelAnimationFrame(carouselFrame);
-    carouselFrame = requestAnimationFrame(() => {
-      currentPrinciple = mod(Math.round((principlesCarousel.scrollLeft - setWidth) / stepWidth()), principleCards.length);
-    });
-    clearTimeout(settleTimer);
-    settleTimer = setTimeout(() => {
-      if (principlesCarousel.scrollLeft < setWidth) principlesCarousel.scrollLeft += setWidth;
-      else if (principlesCarousel.scrollLeft >= setWidth * 2 - stepWidth() / 2) principlesCarousel.scrollLeft -= setWidth;
-    }, 250);
-  }, { passive: true });
-
-  const pauseAutoplay = () => clearInterval(autoplayTimer);
-  const resumeAutoplay = () => {
-    pauseAutoplay();
-    if (!reducedMotion && !document.hidden) autoplayTimer = setInterval(() => goTo(currentPrinciple + 1), 4500);
-  };
-  document.addEventListener('visibilitychange', () => document.hidden ? pauseAutoplay() : resumeAutoplay());
-  window.addEventListener('resize', () => {
-    const relativePosition = principlesCarousel.scrollLeft - setWidth;
-    setWidth = originalSet.getBoundingClientRect().width;
-    principlesCarousel.scrollLeft = setWidth + relativePosition;
-  });
-  resumeAutoplay();
+  const clone = originalSet.cloneNode(true);
+  clone.setAttribute('aria-hidden', 'true');
+  clone.inert = true;
+  carouselTrack.append(clone);
+  principlesCarousel.style.setProperty('--carousel-duration', `${principleCards.length * 4.5}s`);
 }
 </script>
 </body>
