@@ -7,78 +7,67 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
-> Minimal, elegant, and intentional. A personal portfolio shaped for clarity, craft, and momentum.
+> I built this portfolio around clarity, thoughtful design, and the software I’m learning to ship.
 
 </div>
 
-A polished single-page portfolio for Niladri Dey — built to present work, process, and personality in a clean, modern experience. The project is lightweight, fast, and dependency-free, with an emphasis on design clarity and conversion-friendly storytelling for recruiters, collaborators, and employers.
+I use this site to introduce my work, show how I approach building software, and make it easy to explore my projects or contact me.
 
-Live site: https://techieniladri.github.io/niladridey_portfolio/
+**Live site:** https://techieniladri.github.io/niladridey_portfolio/
 
-## Overview
+## What I share
 
-This repository contains a static portfolio website designed to showcase:
+- I show projects I’ve built and products I’m actively developing.
+- I describe the tools I’ve used and the work they support.
+- I share how I approach planning, implementation, and refinement.
+- I provide direct links to my demos, source code, and contact details.
 
-- frontend and product-minded engineering work
-- design sensibility and UI craft
-- project thinking and technical depth
-- contact details and professional presence
-
-The experience is intentionally simple: HTML, CSS, and vanilla JavaScript without a framework or build step, making the site easy to host, easy to maintain, and quick to ship.
-
-## Why it exists
-
-The portfolio acts as a digital identity and a concise proof of capability. It helps visitors understand:
-
-- who I am
-- what kind of work I build
-- which technologies I have used
-- what kinds of products and experiments I explore
-
-It is especially useful for:
-
-- recruiters evaluating product and frontend skill
-- collaborators assessing fit and intent
-- employers looking for thoughtful engineering and design
+I built the site as a responsive single page using HTML, CSS, and vanilla JavaScript. I kept it dependency-free and deploy it with GitHub Pages.
 
 ## Featured work
 
 ### Productivity Garden
-A task-to-plant productivity concept where habit progress turns into a living growth loop.
+
+I’m developing Productivity Garden as a full-stack MVP that turns tasks into seeds. I can plant a seed with a task, let it grow through a five-stage, 20-minute cycle, then harvest it after completing the task. Completing tasks unlocks higher-tier plant rewards.
+
+I’m building it with JavaScript, Vite, Supabase Auth, PostgreSQL, row-level security, and PostgreSQL RPCs. I added database integrity constraints and a transactional `plant_seed()` RPC, then integrated and tested it through the authenticated frontend. I’m hardening edge cases before deployment. The project is private and does not yet have a public demo.
 
 ### Neural-Decider
-An AI-inspired reflective tool that helps users respond to different scenarios and see guided interpretations.
 
-- Live demo: https://decision-timer.vercel.app/
-- GitHub: https://github.com/techieNiladri/Neural-Decider
+I built Neural-Decider as an AI-assisted reflection experiment. I use choice-based scenarios to generate reflective responses and visual summaries. I present it as an exploration, not a validated psychological assessment.
+
+- **Live demo:** https://decision-timer.vercel.app/
+- **Source code:** https://github.com/techieNiladri/Neural-Decider
 
 ### Iron-Forge
-A prototype fitness tracker for logging workouts and exercise data using a Node.js backend.
 
-- GitHub: https://github.com/techieNiladri/Iron-Forge
+I started Iron-Forge as a workout tracker for recording exercises, weights, and reps. I’ve worked on its Node.js and Express API, PostgreSQL schema, and frontend entry flow. I’m still refining the integration and deployment, so I don’t list a live demo yet.
+
+- **Source code:** https://github.com/techieNiladri/Iron-Forge
 
 ### Keeper App
-A responsive notes app built with React for managing quick notes and interactions.
 
-- GitHub: https://github.com/techieNiladri/KeeperApp
-- Live demo: https://techieniladri.github.io/KeeperApp/
+I built Keeper App with React and Material UI so I can add and delete notes in a responsive interface. Notes currently stay in page state and do not persist after a refresh.
 
-## Stack
+- **Live demo:** https://techieniladri.github.io/KeeperApp/
+- **Source code:** https://github.com/techieNiladri/KeeperApp
 
-- HTML5 for semantic structure
-- CSS3 for layout, responsive design, and motion
-- Vanilla JavaScript for interaction and behavior
-- Google Fonts for typography
-- GitHub Pages for deployment
+## My services site
 
-## Experience highlights
+I also built Aetheris, my live multi-page services site, to present the websites I can build, my process, and ways to contact me.
 
-- responsive layout for mobile, tablet, and desktop
-- animated hero and scroll-based reveal effects
-- project showcase cards with direct links
-- accessible design patterns and semantic structure
-- smooth navigation and interaction details
-- clean visual system with a premium minimal feel
+- **Live site:** https://techieniladri.github.io/Aetheris/
+- **Source code:** https://github.com/techieNiladri/Aetheris
+
+## How I built this portfolio
+
+- I use HTML5 for structure and semantics.
+- I use CSS for layout, responsive styling, design tokens, and animation.
+- I use vanilla JavaScript for interactions, navigation, and interface behavior.
+- I use Google Fonts for typography.
+- I host the site with GitHub Pages.
+
+I focused on accessible interactions, a responsive layout, direct project links, and a mobile navigation drawer. I don’t need a framework, package installation, or build step to run this site.
 
 ## Project structure
 
@@ -88,22 +77,15 @@ niladridey_portfolio/
 ├── README.md
 ├── .gitignore
 ├── .gitattributes
-├── assets/
-│   ├── neural-decider-screenshot.png
-│   ├── keeperapp-screenshot.png
-│   └── niladri-dey-cv.pdf
-└── .github/
+└── assets/
+    ├── neural-decider-screenshot.png
+    ├── keeperapp-screenshot.png
+    └── niladri-dey-cv.pdf
 ```
 
 ## Run locally
 
-Because this is a static site, there is no install or build step required.
-
-### Open directly
-
-Open `index.html` in your browser.
-
-### Run a local server
+I can open `index.html` directly, or start a local server:
 
 ```bash
 git clone https://github.com/techieNiladri/niladridey_portfolio.git
@@ -111,26 +93,26 @@ cd niladridey_portfolio
 python -m http.server 8000
 ```
 
-Then visit:
+Then I open http://localhost:8000 in a browser.
 
-```text
-http://localhost:8000
-```
+## Publish an update
 
-## Deploying
+I publish updates by pushing to the `main` branch and checking the live site.
 
-This project is already configured for GitHub Pages and can be published directly from the repository root.
+## CV
+
+I keep my downloadable CV in `assets/niladri-dey-cv.pdf` and link to it from the site.
 
 ## Contact
 
-- GitHub: https://github.com/techieNiladri
-- LinkedIn: https://www.linkedin.com/in/niladri-dey-280710d/
-- Email: deyniladri937@gmail.com
+- **Portfolio:** https://techieniladri.github.io/niladridey_portfolio/
+- **My services site:** https://techieniladri.github.io/Aetheris/
+- **GitHub:** https://github.com/techieNiladri
+- **LinkedIn:** https://www.linkedin.com/in/niladri-dey-280710d/
+- **Email:** deyniladri937@gmail.com
 
-## About the author
+## About me
 
-I am a developer based in Kolkata, India, exploring frontend, backend, and product-oriented building. This portfolio reflects a practical engineering mindset — clear interfaces, thoughtful systems, and a curiosity for building meaningful experiences.
+I’m a developer based in Kolkata, India, exploring frontend, full-stack, backend, and product-oriented work. I care about clear interfaces, useful functionality, and learning by building real projects.
 
----
-
-Built with intent.
+I built this portfolio with intent, and I’ll keep it aligned with the work I can show.
