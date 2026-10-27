@@ -1,78 +1,86 @@
-# Niladri Dey — Developer Portfolio
+# Aetheris — Niladri Dey Portfolio
 
-A personal portfolio website of me, built to showcase development work, technical strengths, and project thinking in a polished, responsive front-end experience.
+<div align="center">
 
-Live demo: https://techieniladri.github.io/niladridey_portfolio/
+![Portfolio Preview](https://img.shields.io/badge/Portfolio-Interactive-8B5CF6?style=for-the-badge&logo=githubpages&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+> Minimal, elegant, and intentional. A personal portfolio shaped for clarity, craft, and momentum.
+
+</div>
+
+A polished single-page portfolio for Niladri Dey — built to present work, process, and personality in a clean, modern experience. The project is lightweight, fast, and dependency-free, with an emphasis on design clarity and conversion-friendly storytelling for recruiters, collaborators, and employers.
+
+Live site: https://techieniladri.github.io/niladridey_portfolio/
 
 ## Overview
 
-This project is a static portfolio website designed for personal branding and job-focused outreach. It highlights:
+This repository contains a static portfolio website designed to showcase:
 
-- frontend and product-focused development work
-- core technologies and project experience
-- a practical development process and engineering mindset
-- direct contact and social links for recruiters and collaborators
+- frontend and product-minded engineering work
+- design sensibility and UI craft
+- project thinking and technical depth
+- contact details and professional presence
 
-The site is intentionally lightweight and dependency-free, using HTML, CSS, and vanilla JavaScript to deliver a modern single-page portfolio without requiring a build toolchain.
+The experience is intentionally simple: HTML, CSS, and vanilla JavaScript without a framework or build step, making the site easy to host, easy to maintain, and quick to ship.
 
-## Why This Project Exists
+## Why it exists
 
-The site serves as a digital resume and portfolio, helping visitors quickly understand:
+The portfolio acts as a digital identity and a concise proof of capability. It helps visitors understand:
 
-- who am I
+- who I am
 - what kind of work I build
 - which technologies I have used
-- what kinds of products and experiments I am exploring
+- what kinds of products and experiments I explore
 
 It is especially useful for:
 
-- recruiters evaluating frontend and full-stack potential
-- collaborators exploring project fit
-- employers evaluating design and engineering sensibility
+- recruiters evaluating product and frontend skill
+- collaborators assessing fit and intent
+- employers looking for thoughtful engineering and design
 
-## Featured Projects
+## Featured work
 
 ### Productivity Garden
-A task-to-plant productivity concept where user progress maps to a growing habit loop. It is currently a private development project and does not yet have a public live demo.
+A task-to-plant productivity concept where habit progress turns into a living growth loop.
 
 ### Neural-Decider
-An AI-assisted reflection experiment where users respond to scenarios and receive reflective output. This project is publicly available and includes a live experiment link.
+An AI-inspired reflective tool that helps users respond to different scenarios and see guided interpretations.
 
 - Live demo: https://decision-timer.vercel.app/
 - GitHub: https://github.com/techieNiladri/Neural-Decider
 
 ### Iron-Forge
-A workout-tracking prototype built around Node.js, Express, and PostgreSQL for recording exercises and workout data. It is still in early prototype stages.
+A prototype fitness tracker for logging workouts and exercise data using a Node.js backend.
 
 - GitHub: https://github.com/techieNiladri/Iron-Forge
 
 ### Keeper App
-A responsive notes application built with React and UI components for managing notes with add and delete interactions.
+A responsive notes app built with React for managing quick notes and interactions.
 
 - GitHub: https://github.com/techieNiladri/KeeperApp
 - Live demo: https://techieniladri.github.io/KeeperApp/
 
-## Tech Stack
+## Stack
 
-This project uses a simple static front-end stack:
-
-- HTML5 for structure and semantics
-- CSS3 for layout, responsiveness, design system, animation, and styling
-- Vanilla JavaScript for interactions, scroll effects, navigation, and UI behavior
+- HTML5 for semantic structure
+- CSS3 for layout, responsive design, and motion
+- Vanilla JavaScript for interaction and behavior
 - Google Fonts for typography
 - GitHub Pages for deployment
 
-## Key Features
+## Experience highlights
 
-- Responsive layout optimized for desktop, tablet, and mobile
-- Animated hero and reveal-based scroll interactions
-- Project showcase cards with live/demo links
-- Accessible UI patterns and semantic structure
-- Smooth scrolling and mobile navigation drawer
-- Clean, modern visual style with custom design tokens
-- No framework dependency or build step required
+- responsive layout for mobile, tablet, and desktop
+- animated hero and scroll-based reveal effects
+- project showcase cards with direct links
+- accessible design patterns and semantic structure
+- smooth navigation and interaction details
+- clean visual system with a premium minimal feel
 
-## Project Structure
+## Project structure
 
 ```text
 niladridey_portfolio/
@@ -84,17 +92,18 @@ niladridey_portfolio/
 │   ├── neural-decider-screenshot.png
 │   ├── keeperapp-screenshot.png
 │   └── niladri-dey-cv.pdf
-└── .github/  (if present in future workflows or Pages config)
+└── .github/
 ```
 
-## Running Locally
+## Run locally
 
 Because this is a static site, there is no install or build step required.
 
-### Option 1: Open directly
-Open `index.html` in a browser.
+### Open directly
 
-### Option 2: Run a local static server
+Open `index.html` in your browser.
+
+### Run a local server
 
 ```bash
 git clone https://github.com/techieNiladri/niladridey_portfolio.git
@@ -108,44 +117,19 @@ Then visit:
 http://localhost:8000
 ```
 
-## Deploying with GitHub Pages
+## Deploying
 
-This repository is already configured to use GitHub Pages, and the site is accessible through the live link above.
-
-If you need to redeploy:
-
-1. Push the latest changes to the `main` branch.
-2. Ensure GitHub Pages is enabled for the repository.
-3. Confirm the project is published from the repository root or the expected branch.
-
-## CV Download
-
-The portfolio includes a downloadable CV button that links to the CV asset in the `assets/` folder.
-
-## Design and Engineering Notes
-
-The site is designed to balance professionalism with personality. It avoids heavy dependencies and instead focuses on:
-
-- clean information hierarchy
-- strong visual identity
-- accessible interactions
-- a clear, portfolio-oriented narrative
-
-This makes the project easy to host, easy to understand, and easy to maintain.
-
-
-- leave the project unlicensed, or
-- add MIT if they want the code to be reusable by others.
+This project is already configured for GitHub Pages and can be published directly from the repository root.
 
 ## Contact
 
 - GitHub: https://github.com/techieNiladri
 - LinkedIn: https://www.linkedin.com/in/niladri-dey-280710d/
-- Email: mailto:deyniladri937@gmail.com
+- Email: deyniladri937@gmail.com
 
-## About the Author
+## About the author
 
-I am a developer based in Kolkata, India, exploring frontend, backend, and product-oriented development work. The portfolio reflects my practical engineering mindset: clear interfaces, meaningful functionality, and learning through real projects.
+I am a developer based in Kolkata, India, exploring frontend, backend, and product-oriented building. This portfolio reflects a practical engineering mindset — clear interfaces, thoughtful systems, and a curiosity for building meaningful experiences.
 
 ---
 
