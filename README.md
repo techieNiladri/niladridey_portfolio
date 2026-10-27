@@ -1,4 +1,4 @@
-# Aetheris — Niladri Dey Portfolio
+# Niladri Dey Portfolio
 
 <div align="center">
 
