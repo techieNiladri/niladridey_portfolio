@@ -688,12 +688,15 @@ body { background:var(--bg); color:var(--fg); }
       </header>
       <div class="work-wrapper reveal">
         <div class="work-track" role="list" aria-label="Case studies">
-          <!-- Productivity Garden: concept preview until a public screenshot is available. -->
+          <!-- Illustrated cover; the project link opens the deployed app. -->
           <article class="work-card card" role="listitem">
-            <div class="work-media"><div class="project-preview garden-preview" role="img" aria-label="Illustrated concept preview of a seed growing through task stages"><div class="preview-window"><div class="preview-heading"><span>Today’s garden</span><span class="preview-pill">20:00</span></div><div class="preview-row"><span>🌱 Focus session</span><span class="preview-muted">Stage 2 of 5</span></div><div class="preview-row"><span class="preview-muted">Growth progress</span><span class="preview-pill">Growing</span></div></div></div></div>
+            <div class="work-media"><img class="project-screenshot" src="assets/productivity-garden-cover.svg" alt="Illustrated cover for my Productivity Garden app, showing a growing plant" loading="lazy" decoding="async"></div>
             <div class="work-content">
               <h3>Productivity Garden</h3>
-              <p>I’m building Productivity Garden around a 20-minute task-to-plant cycle, with authentication, row-level security, database constraints, and a transactional planting RPC. I’m hardening edge cases before deployment.</p>
+              <p>I built and deployed a task-to-plant app with individual gardens, a 20-minute growth cycle, harvesting, seed rewards, and a plant catalogue. I used row-level security, transactional SQL functions, and database constraints to control access and keep garden updates consistent.</p>
+              <div class="work-links">
+                <a href="https://productivity-garden-hazel.vercel.app/" class="service-link" target="_blank" rel="noopener noreferrer">Live app <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              </div>
             </div>
           </article>
           <article class="work-card card" role="listitem">
